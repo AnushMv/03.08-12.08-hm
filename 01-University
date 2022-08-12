@@ -1,0 +1,20 @@
+class University {
+    constructor () { 
+    this.teachers = [];
+    this.students = [];
+    }
+    addMember(member,type){
+        if(type === 'teacher'){
+            this.teachers.push(member);
+        } else{
+            this.students.push(member);
+        }
+    }
+    removeMember(member,type){
+        if(type === 'teacher'){
+            this.teachers.push(member);
+        } else{
+            this.students.push(member);
+        }
+    }
+}

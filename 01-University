@@ -1,7 +1,10 @@
-class University {
-    constructor () { 
-    this.teachers = [];
-    this.students = [];
+class UniversityMember {
+    constructor (name,age,role) { 
+        this.name = name;
+        this.age = age;
+        this.energy = 24;
+        this.teachers = [];
+        this.students = [];
     }
     addMember(member,role){
         if(role === 'teacher'){
@@ -19,17 +22,11 @@ class University {
     }
     startLesson(role){
         if(role === 'teacher'){
-            this.energy = this.energy - 2;
+            this.energy = this.energy - 5;
         } else if(role === 'student'){
-            this.energy = energy - 5;
+            this.energy = this.energy - 2;
         }
-    }
-}
-class  UniversityMember{
-     constructor (name,age,role) { 
-    this.name = name;
-    this.age = age;
-    this.energy = 24;
+        return this.energy;
     }
     info(){
         let inform = {
@@ -39,7 +36,4 @@ class  UniversityMember{
         }
         return inform;
     }
-}
-class Theacher extends UniversityMember{
-    
 }

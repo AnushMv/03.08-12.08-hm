@@ -3,18 +3,43 @@ class University {
     this.teachers = [];
     this.students = [];
     }
-    addMember(member,type){
+    addMember(member,role){
+        if(role === 'teacher'){
+            this.teachers.push(member);
+        } else if(role === 'student'){
+            this.students.push(member);
+        }
+    }
+    removeMember(member,role){
         if(type === 'teacher'){
             this.teachers.push(member);
         } else{
             this.students.push(member);
         }
     }
-    removeMember(member,type){
-        if(type === 'teacher'){
-            this.teachers.push(member);
-        } else{
-            this.students.push(member);
+    startLesson(role){
+        if(role === 'teacher'){
+            this.energy = this.energy - 2;
+        } else if(role === 'student'){
+            this.energy = energy - 5;
         }
     }
+}
+class  UniversityMember{
+     constructor (name,age,role) { 
+    this.name = name;
+    this.age = age;
+    this.energy = 24;
+    }
+    info(){
+        let inform = {
+            name: this.name,
+            age: this.age,
+            energy: this.energy,
+        }
+        return inform;
+    }
+}
+class Theacher extends UniversityMember{
+    
 }

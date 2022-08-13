@@ -1,0 +1,11 @@
+function CofeeShop(){
+    let name = "A";
+    let menu = {
+        name: 'cofee';
+        type: 'drinc';
+    }
+    let order = [];
+function(){
+    
+}
+}

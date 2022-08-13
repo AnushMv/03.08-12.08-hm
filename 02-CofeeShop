@@ -5,7 +5,7 @@ function CofeeShop(){
         type: 'drinc';
     }
     let order = [];
-function(){
+function addOrder(){
     
 }
 }

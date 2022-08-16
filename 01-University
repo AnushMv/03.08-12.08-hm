@@ -1,39 +1,62 @@
-class UniversityMember {
-    constructor (name,age,role) { 
-        this.name = name;
-        this.age = age;
-        this.energy = 24;
-        this.teachers = [];
-        this.students = [];
+class University {
+  constructor() {
+    this.teachers = [];
+    this.students = [];
+  }
+  addMember(member, role) {
+    if (role === "teacher") {
+      this.teachers.push(member);
+    } else if (role === "student") {
+      this.students.push(member);
     }
-    addMember(member,role){
-        if(role === 'teacher'){
-            this.teachers.push(member);
-        } else if(role === 'student'){
-            this.students.push(member);
-        }
+  }
+  removeMember(member, role) {
+    if (role === "teacher") {
+      let memberIndex = this.teachers.findIndex(member => member = this.name);
+      this.teachers.slice(memberIndex,1);
+
+    } else {
+      let memberIndex = this.students.findindex(member => member = this.name);
+      this.students.slice(memberIndex,1);
     }
-    removeMember(member,role){
-        if(type === 'teacher'){
-            this.teachers.push(member);
-        } else{
-            this.students.push(member);
-        }
+  }
+  startLesson(role) {
+    if (role === "teacher") {
+      this.energy = this.energy - 5;
+    } else if (role === "student") {
+      this.energy = this.energy - 2;
     }
-    startLesson(role){
-        if(role === 'teacher'){
-            this.energy = this.energy - 5;
-        } else if(role === 'student'){
-            this.energy = this.energy - 2;
-        }
-        return this.energy;
-    }
-    info(){
-        let inform = {
-            name: this.name,
-            age: this.age,
-            energy: this.energy,
-        }
-        return inform;
-    }
+    return this.energy;
+  }
 }
+class Universityember extends University{
+  constructor(name,age) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.energy = 24;
+  }
+  info() {
+    let inform = {
+      name: this.name,
+      age: this.age,
+      energy: this.energy
+    };
+    return inform;
+  }
+}
+
+class Teacher extends Universityember {
+  
+}
+let teacher1 = new Teacher("a", "teacher", 45);
+
+
+
+
+// console.log(teacher1.info());
+teacher1.addMember("b", "teacher")
+// console.log(teacher1);
+ teacher1.removeMember('b', "teacher")
+ console.log(teacher1)
+teacher1.startLesson("teacher");
